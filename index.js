@@ -11,8 +11,7 @@ module.exports = (nextConfig = {}) => {
             buildId,
             defaultLoaders,
             config: {
-                distDir,
-                publicPath
+                distDir
             }
         } = options
 
@@ -37,7 +36,7 @@ module.exports = (nextConfig = {}) => {
                     src: manifest.icons.src,
                     cache: manifest.icons.cache || false,
                     output: resolve(process.cwd(), `./static/manifest/icons`),
-                    publicPath: publicPath ? publicPath :'/static/manifest/icons/',
+                    publicPath: manifest.icons.publicPath ? manifest.icons.publicPath :'/static/manifest/icons/',
                     sizes: manifest.icons.sizes || [192, 512]
 
                 });
